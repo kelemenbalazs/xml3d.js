@@ -22,26 +22,6 @@ TextureTypes["1d"] = 1;
 TextureTypes[1] = "1d";
 TextureTypes["3d"] = 2;
 TextureTypes[2] = "3d";
-// FilterTypes
-var FilterTypes = {};
-FilterTypes["nearest"] = 1;
-FilterTypes[1] = "nearest";
-FilterTypes["linear"] = 2;
-FilterTypes[2] = "linear";
-FilterTypes["nearest-mipmap-nearest"] = 3;
-FilterTypes[3] = "nearest-mipmap-nearest";
-FilterTypes["linear-mipmap-nearest"] = 4;
-FilterTypes[4] = "linear-mipmap-nearest";
-FilterTypes["nearest-mipmap-linear"] = 5;
-FilterTypes[5] = "nearest-mipmap-linear";
-FilterTypes["linear-mipmap-linear"] = 6;
-FilterTypes[6] = "linear-mipmap-linear";
-// WrapTypes
-var WrapTypes = {};
-WrapTypes["clamp"] = 0;
-WrapTypes[0] = "clamp";
-WrapTypes["repeat"] = 1;
-WrapTypes[1] = "repeat";
 // PlatformTypes
 var PlatformTypes = {};
 PlatformTypes["auto"] = 1;
@@ -520,13 +500,7 @@ classInfo['texture'] = {
     name: {a: handlers.StringAttributeHandler},
     param: {a: handlers.BoolAttributeHandler, params: false},
     key: {a: handlers.FloatAttributeHandler, params: 0.0},
-    type: {a: handlers.EnumAttributeHandler, params: {e: TextureTypes, d: 0}},
-    filterMin: {a: handlers.EnumAttributeHandler, params: {e: FilterTypes, d: 6}},
-    filterMag: {a: handlers.EnumAttributeHandler, params: {e: FilterTypes, d: 2}},
-    filterMip: {a: handlers.EnumAttributeHandler, params: {e: FilterTypes, d: 1}},
-    wrapS: {a: handlers.EnumAttributeHandler, params: {e: WrapTypes, d: 0}},
-    wrapT: {a: handlers.EnumAttributeHandler, params: {e: WrapTypes, d: 0}},
-    wrapU: {a: handlers.EnumAttributeHandler, params: {e: WrapTypes, d: 0}}
+    type: {a: handlers.EnumAttributeHandler, params: {e: TextureTypes, d: 0}}
     };
 /**
  * Properties and methods for <img>
@@ -580,9 +554,7 @@ classInfo['view'] = {
 module.exports = {
     classInfo : classInfo,
     MeshTypes : MeshTypes,
-    FilterTypes : FilterTypes,
     TextureTypes : TextureTypes,
-    WrapTypes : WrapTypes,
     PlatformTypes : PlatformTypes,
     DataFieldTypes : DataFieldType,
     DataChannelOrigin : DataChannelOrigin
