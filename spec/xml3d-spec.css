@@ -1,22 +1,98 @@
 div.attributes table {
-  margin-top: 0;
-  margin-bottom: 16px;
-  border-collapse: collapse;
+    width: 100%;
+    margin: 1.2em 0;
+
+    border-collapse: collapse;
 }
 
-div.attributes table td, th {
+div.attributes table td {
     padding: 6px 13px;
     border: 1px solid #ddd;
 }
 
 div.attributes table tr {
-  background-color: #fff;
+    background-color: #fff;
 }
 
 div.attributes table tr:nth-child(2n) {
-  background-color: #f8f8f8;
+    background-color: #f8f8f8;
 }
 
 div.attributes table th {
-  font-weight: bold;
+    font-weight: bold;
+    padding: 6px 13px;
+}
+
+/** Property/Descriptor Definition Tables *************************************/
+
+table.propdef, table.propdef-extra,
+table.descdef, table.definition-table {
+    page-break-inside: avoid;
+    width: 100%;
+    margin: 1.2em 0;
+    border-left: 0.5em solid #8CCBF2;
+    padding: 0.5em 1em;
+    background: #DEF;
+    border-spacing: 0;
+}
+
+table.propdef td, table.propdef-extra td,
+table.descdef td, table.definition-table td,
+table.propdef th, table.propdef-extra th,
+table.descdef th, table.definition-table th {
+    padding: 0.5em;
+    vertical-align: baseline;
+    border-bottom: 1px solid #bbd7e9;
+}
+
+table.propdef > tbody > tr:last-child th,
+table.propdef-extra > tbody > tr:last-child th,
+table.descdef > tbody > tr:last-child th,
+table.definition-table > tbody > tr:last-child th,
+table.propdef > tbody > tr:last-child td,
+table.propdef-extra > tbody > tr:last-child td,
+table.descdef > tbody > tr:last-child td,
+table.definition-table > tbody > tr:last-child td {
+    border-bottom: 0;
+}
+
+table.propdef th,
+table.propdef-extra th,
+table.descdef th,
+table.definition-table th {
+    font-style: italic;
+    font-weight: normal;
+    width: 8.3em;
+    padding-left: 1em;
+}
+
+/* For when values are extra-complex and need formatting for readability */
+table td.pre {
+    white-space: pre-wrap;
+}
+
+/* A footnote at the bottom of a propdef */
+table.propdef td.footnote,
+table.propdef-extra td.footnote,
+table.descdef td.footnote,
+table.definition-table td.footnote {
+    padding-top: 0.6em;
+}
+
+table.propdef td.footnote:before,
+table.propdef-extra td.footnote:before,
+table.descdef td.footnote:before,
+table.definition-table td.footnote:before {
+    content: " ";
+    display: block;
+    height: 0.6em;
+    width: 4em;
+    border-top: thin solid;
+}
+
+.propdef th {
+    font-style: italic;
+    font-weight: normal;
+    text-align: left;
+    width: 3em;
 }
